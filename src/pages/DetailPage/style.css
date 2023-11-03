@@ -1,0 +1,38 @@
+.side-notification-container {
+    width: 328px;
+    border-radius: 8px;
+    background: #FFF;
+    height: 159px;
+    padding: 20px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgBlock {
+    width: 40px;
+    height: 40px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.row h3 {
+    color:  #253858;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+}
+
+.row p{
+    color: #5E6C84;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+    text-align:left;
+}

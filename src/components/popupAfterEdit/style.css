@@ -1,0 +1,162 @@
+.customPopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    animation: backdropAnimation 0.3s linear forwards;
+}
+
+@media (min-width: 992px) {
+    .customPopup {
+        align-items: center;
+    }
+}
+
+.customPopup .customPopupInner {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    background: #fff;
+    animation: BodyAnimation 0.3s linear forwards;
+}
+
+@media (min-width: 992px) {
+    .customPopup .customPopupInner {
+        max-width: 400px;
+        border-radius: 16px;
+    }
+}
+
+.customPopup .customPopupInner .customPopupHeader {
+    background: #F4F5F7;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+}
+
+.customPopup .customPopupInner .customPopupHeader h4 {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #2A3751;
+}
+
+.customPopup .customPopupInner .customPopupHeader img {
+    display: block;
+    width: 22px;
+}
+
+.customPopup .customPopupInner .customPopupBody {
+    padding: 20px 20px;
+}
+
+.customPopup .customPopupInner .customPopupBody p {
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    text-align: left;
+    opacity: 0.8;
+}
+
+.customPopup .customPopupInner .customPopupBody .successBlock {
+    margin-bottom: 20px;
+}
+
+.customPopup .customPopupInner .customPopupBody .successBlock img {
+    width: 100%;
+    max-width: 140px;
+    margin: 0 auto 20px;
+    display: block;
+    width: 100%;
+}
+
+.customPopup .customPopupInner .customPopupBody .successBlock h3 {
+    color: green;
+    font-size: 22px;
+    text-align: center;
+}
+
+.customPopup .customPopupInner .customPopupBody .confirmationBlock {
+    display: flex;
+    column-gap: 12px;
+    margin-top: 16px;
+}
+
+.customPopup .customPopupInner .customPopupBody .confirmationBlock label {
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    opacity: 0.8;
+}
+
+.customPopup .customPopupInner .customPopupBody .buttonControlBlock {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.customPopup .customPopupInner .customPopupBody .buttonControlBlock.btnRow {
+    flex-direction: column;
+}
+
+.customPopup .customPopupInner .customPopupBody .buttonControlBlock button {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 16px;
+    display: block;
+}
+
+.customPopup .customPopupInner .customPopupBody .buttonControlBlock button.btnOutline {
+    color: #0065FD;
+    background: #fff;
+    border-color: #0065FD;
+}
+
+.customPopup .customPopupInner .customPopupBody .buttonControlBlock button.btnFill {
+    color: #fff;
+    background: #0065FD;
+}
+
+@keyframes backdropAnimation {
+    0% {
+        background: rgba(48, 67, 99, 0);
+    }
+
+    100% {
+        background: rgba(48, 67, 99, 0.9);
+    }
+}
+
+@keyframes BodyAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    @keyframes BodyAnimation {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+/*# sourceMappingURL=popup.css.map */

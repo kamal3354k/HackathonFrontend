@@ -1,0 +1,34 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body {
+  background: #F4F5F7;;
+}
+
+
+.dBlock{
+  display: block !important;
+}
+
+.dNone{
+  display: none !important;
+}
+
+.layout {
+  margin: 30px 115px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
