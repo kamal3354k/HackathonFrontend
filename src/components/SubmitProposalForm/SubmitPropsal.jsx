@@ -32,7 +32,7 @@ export const SubmitProposal = ({setSubmitForm,submitForm}) => {
       };
 
     const onsubmit=(consent)=>{
-        axios.post('http://hackathonbackend-psi.vercel.app/api/setCustConsent', {
+        axios.post('https://hackathonbackend-psi.vercel.app/api/setCustConsent', {
                 "IsConsent" : consent,
                 "LeadID" : 111,
                 "CustomerID" : 12345
