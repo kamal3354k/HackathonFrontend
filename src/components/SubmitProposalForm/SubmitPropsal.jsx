@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 
 import "./style.css"
+import SkeletonLoader from '../skeletonLoader/SkeletonLoader';
 
 export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
     const [stage, setStage] = useState(1);
@@ -35,7 +36,7 @@ export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
         }
         setLoading(true);
         setStage(2);
-        axios.post('https://hackathonbackend-psi.vercel.app/api/setCustConsent', {
+        axios.post('http://hackathonbackend-psi.vercel.app/api/setCustConsent', {
             "IsConsent": consent,
             "LeadID": 111,
             "CustomerID": 12345
@@ -52,11 +53,6 @@ export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
         return () => {
         };
 
-        // if (response.statusCode === 200) {
-        //     setTimeout(() => {
-        //         window.open(response.redirectUrl)
-        //     }, 2000)
-        // }
     }
     return (
         <div className="customPopup">
@@ -84,15 +80,15 @@ export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
                         </div>
                     </div>
                 </div> :
-                    loading && stage==2? <h1>loading</h1> :
+                    loading && stage==2? <SkeletonLoader count={3}/> :
                         stage === 3 ?
                         <div>
                             <div className="customPopupHeader">
                         <h4>Submit proposal form</h4>
-                        <img src="https://static.pbcdn.in/myaccount-cdn/images/login-close-icon.svg" alt="" onClick={handleClose} />
+                        <img src="https://static.pbcdn.in/myaccount-cdn/images/assets/success-image.png" alt="" onClick={handleClose} />
                         <div className="customPopupBody">
                             <div className="successBlock">
-                                <img src="https://static.pbcdn.in/myaccount-cdn/images/assets/success-image.png" alt="" />
+                                <img src="https://icons.veryicon.com/png/o/miscellaneous/8atour/success-35.png" alt="" />
                                 <h3>Successfull !!!!!!!</h3>
                             </div>
                     </div>
