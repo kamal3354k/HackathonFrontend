@@ -23,7 +23,7 @@ const UserProvider = ({ children }) => {
 
 
     //for details
-    axios.get('http://hackathonbackend-psi.vercel.app/api/getProposalDetails?leadId=111&customerId=12345', {
+    axios.get('https://hackathonbackend-psi.vercel.app/api/getProposalDetails?leadId=111&customerId=12345', {
       cancelToken: source.token // Use the cancel token
     })
       .then((response) => {
@@ -50,7 +50,7 @@ const UserProvider = ({ children }) => {
 
 
     //for eligibility
-      axios.get('http://hackathonbackend-psi.vercel.app/api/checkEligibility?leadId=111&customerId=12345', {
+      axios.get('https://hackathonbackend-psi.vercel.app/api/checkEligibility?leadId=111&customerId=12345', {
         cancelToken: source.token // Use the cancel token
       })
         .then((response) => {
