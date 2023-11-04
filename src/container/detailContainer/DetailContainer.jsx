@@ -82,7 +82,7 @@ const DetailContainer = ({ setshowSkeleton }) => {
 
       // call Redirect to CJ Api here 
 
-      axios.post('http://hackathonbackend-psi.vercel.app/api/generateRedirectLink', {
+      axios.post('https://hackathonbackend-psi.vercel.app/api/generateRedirectLink', {
         "LeadID": 111,
         "CustomerID": 12345,
         "ProductID": 2,

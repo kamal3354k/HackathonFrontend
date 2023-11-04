@@ -36,7 +36,7 @@ export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
         }
         setLoading(true);
         setStage(2);
-        axios.post('http://hackathonbackend-psi.vercel.app/api/setCustConsent', {
+        axios.post('https://hackathonbackend-psi.vercel.app/api/setCustConsent', {
             "IsConsent": consent,
             "LeadID": 111,
             "CustomerID": 12345
