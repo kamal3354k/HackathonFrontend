@@ -90,8 +90,8 @@ const DetailContainer = ({ setshowSkeleton }) => {
       })
         .then((response) => {
           console.log(response)
-          if (response.statusCode === 200) {
-              window.open(response.redirectUrl)
+          if (response?.data.statusCode === 200) {
+              window.open(response?.data?.redirectUrl)
           }
         })
         .catch((err) => {

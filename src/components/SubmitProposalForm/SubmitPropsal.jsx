@@ -73,7 +73,7 @@ export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
                             <input type="checkbox" name="" id="confirm" onChange={(e) => setConsent(e.target.checked)} />
                             <label for="confirm">I have checked that all the details are correct.</label>
                         </div>
-                       {error && <span>errorms </span>} 
+                       {error && <p className="error-text">Required</p>} 
                         <div className="buttonControlBlock btnRow">
                             {/* <button className="btnOutline">Submit</button> */}
                             <button className="btnFill" onClick={() => onsubmit(Consent)}>Submit</button>

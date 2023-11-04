@@ -32,3 +32,9 @@
     color: #fff;
     border-radius: 8px;
 }
+
+.error-text{
+    text-align: left;
+    font-size: 12px !important;
+    color: red !important;
+}
