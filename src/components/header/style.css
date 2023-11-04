@@ -8,5 +8,6 @@ header {
     padding: 16px 80px;
     position: sticky;
     top: 0;
+    z-index: 1;
     width: 100%;
 }

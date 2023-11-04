@@ -5,3 +5,24 @@
 .home-container img{
     width: 100%;
 }
+
+.home-container a.top {
+    width: 340px;
+    position: absolute;
+    height: 60px;
+    content: "";
+    top: 340px;
+    left: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+.home-container a.bottom {
+    width: 194px;
+    position: absolute;
+    height: 109px;
+    content: "";
+    top: 688px;
+    right: 3%;
+    z-index: 1;
+    opacity: 0;
+}

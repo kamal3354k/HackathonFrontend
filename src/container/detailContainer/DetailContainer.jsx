@@ -90,7 +90,6 @@ const DetailContainer = ({ setshowSkeleton }) => {
         "fieldList": state
       })
         .then((response) => {
-          console.log(response)
           if (response?.data.statusCode === 200) {
             window.open(response?.data?.redirectUrl,"_blank","noopener")
           }
@@ -99,7 +98,6 @@ const DetailContainer = ({ setshowSkeleton }) => {
           console.log(err)
         });
         
-      console.log('heree');
     }
 
   }
@@ -112,7 +110,6 @@ const DetailContainer = ({ setshowSkeleton }) => {
     }
   }, [user?.edit])
 
-  console.log(state,"::state")
 
   if (user?.data) {
     return (

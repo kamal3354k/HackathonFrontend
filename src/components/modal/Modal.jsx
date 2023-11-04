@@ -19,15 +19,17 @@ const Modal = (props) => {
 
             <div class="modal-content">
                 <span class="close" onClick={handleClose}><img src={CrossIcon} alt="close" /></span>
-                <div className="modal-header">Review your proposal form</div>
+                <div className="modal-header">Review your application</div>
                 <div className="modal-body">
-                    <div className="time-image-container">
-                        <img src={TimerImage} alt="timer" />
-                        <span className="time-countdown">20</span>
+                    <div className="modal-middle">
+                        <p className='content'>Check and confirm your application form, and make changes if any. Your application will be auto submitted if no action is taken in 20 hours.</p>
+                        <div className="time-image-container">
+                            <img src={TimerImage} alt="timer" />
+                            <span className="time-countdown">20</span>
+                        </div>
                     </div>
-                    <p className='content'>Check your proposal details and make changes something is incorrect before submitting to insurer</p>
                     {label && value && <div className="content-item">
-                        <h3>Smart Protect Goal Life Cover plus</h3>
+                        <h3>Smart Protect Goal Life Cover plus <span>Health Insurance</span></h3>
                         <div className="container">
 
                             <span className="image-container">
@@ -41,14 +43,14 @@ const Modal = (props) => {
                                     <h3>{label}</h3>
                                 </div>
                                 <div className="conatiner-item">
-                                    <h4>Proposar Number</h4>
+                                    <h4>Booking ID</h4>
                                     <h3>{value}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>}
 
-                    <Link to="detail-page" className="proposal-btn">Review proposal form</Link>
+                    <Link to="detail-page" className="proposal-btn">Review now</Link>
                 </div>
             </div>
 

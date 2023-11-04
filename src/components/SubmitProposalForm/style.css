@@ -62,7 +62,7 @@
 
 .customPopup .customPopupInner .customPopupBody {
   padding: 20px 20px;
-    width: 100%;
+  width: 100%;
 }
 
 .customPopup .customPopupInner .customPopupBody p {
@@ -75,8 +75,8 @@
 .customPopup .customPopupInner .customPopupBody .successBlock {
   margin-bottom: 20px;
   display: flex;
-  justify-content: center;
   width: 100%;
+  justify-content: center;
   flex-direction: column;
 }
 

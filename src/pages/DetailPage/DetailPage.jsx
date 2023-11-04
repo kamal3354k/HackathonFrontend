@@ -14,16 +14,23 @@ const DetailPage = () => {
   const [showSkeleton, setshowSkeleton] = useState(true)
 
   const {
-    user
+    user, setStates
   } = useUserContext();
 
 
   useEffect(() => {
-   const timer = setTimeout(() => {
+    const timer = setTimeout(() => {
       setshowSkeleton(false)
     }, 2000)
-    return()=>clearTimeout(timer);
+    return () => {
+      clearTimeout(timer)
+    };
   }, [user.edit])
+
+
+  useEffect(() => {
+    setStates((pre) => ({ ...pre, edit: false }))
+  }, [])
 
   if (user?.error) {
     return <p>Error: {user?.error?.message}</p>;
@@ -57,12 +64,12 @@ const DetailPage = () => {
               <div className="imgBlock">
                 <img src={NeedHelpIcon} alt="NeedHelpIcon" />
               </div>
-              <h3>Deepak Bhardwaj <br /><small>ET01123</small></h3>
+              <h3>Sushank Kumar<br /><small>ET01123</small></h3>
 
             </div>
 
             <div className="row">
-              <p>An advisor have been assign to you. He will call you to guide you through proposal form changes</p>
+              <p>Our advisor will call you soon to assist you with your changes.</p>
             </div>
           </div>}
 

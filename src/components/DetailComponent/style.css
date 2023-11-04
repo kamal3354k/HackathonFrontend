@@ -9,27 +9,38 @@
 
 
 .detail-header {
-    height: 106px;
-    background: #0867FF;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap: 27px;
     align-items: start;
     border-radius: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.detail-header span.image-container {
+    position: relative;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #DFE1E6;
+    background: #FFF;
 }
 
 
-.detail-header h4 {
+.detail-header > h4 {
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 32px;
-    color: #fff
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.detail-header span {
+.detail-header .checkbox-span {
     width: 16px;
     height: 14px;
 }

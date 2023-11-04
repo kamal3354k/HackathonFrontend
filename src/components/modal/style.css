@@ -16,8 +16,7 @@
   /* Full height */
   overflow: auto;
   /* Enable scroll if needed */
-  background: #253858;
-  opacity: 0.94;
+  background: #253858f5;
 
 }
 
@@ -79,6 +78,7 @@
   line-height: 24px;
   text-align: left;
   margin-bottom: 20px;
+  width: 68%;
 }
 
 .content-item {
@@ -86,6 +86,7 @@
   border-radius: 8px;
   border: 1px solid #DFE1E6;
   padding: 16px;
+  background-color: #fff;
 }
 
 .content-item>h3 {
@@ -93,7 +94,20 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
   color: #253858;
+}
+
+.content-item>h3 span {
+  border-radius: 40px;
+  background: #D7F4DF;
+  color: #3AD737;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .container {
@@ -145,6 +159,12 @@ span.image-container {
   background: #FFF;
 }
 
+.modal-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 span.time-countdown {
   position: absolute;
   left: 26px;
@@ -159,7 +179,7 @@ span.time-countdown {
 .proposal-btn {
   color: #FFF;
   text-align: center;
-  border:none;
+  border: none;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -173,7 +193,7 @@ span.time-countdown {
   cursor: pointer;
   text-decoration: none;
   border-radius: 8px;
-  background: #0065FF;  
+  background: #0065FF;
 }
 
 @keyframes fadeOut {

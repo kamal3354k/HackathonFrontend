@@ -23,12 +23,14 @@ const Home = () => {
     <><Modal label={user?.data?.Name} value={user?.data?.ProposalNumber} />
       <div className='home-container'>
         <img src={HomeScreen} alt="home screen" useMap='#homeScreen' />
-        <map name="homeScreen">
-          <Link to="/detail-page">
-            <area shape="rect" coords="768, 357,1100,400" alt="detail page" />
-            <area shape="rect" coords="1284, 736,1468,783" alt="details page" />
+          <Link className="top" to="/detail-page">
+            {/* <area shape="rect" coords="768, 357,1100,400" alt="detail page" />
+            <area shape="rect" coords="1284, 736,1468,783" alt="details page" /> */}
           </Link>
-        </map>
+          <Link className="bottom" to="/detail-page">
+            {/* <area shape="rect" coords="768, 357,1100,400" alt="detail page" />
+            <area shape="rect" coords="1284, 736,1468,783" alt="details page" /> */}
+          </Link>
       </div>
     </>
   )
