@@ -9,8 +9,7 @@ const PopUpAfterEdit= ({handleModalCancel,handleModalProceed}) => {
                     <h4>Edit proposal form</h4>
                 </div>
                 <div className="customPopupBody">
-                    <p>Changes to proposal form might impact your premium and policy issue date. A agent will also be assigned to you for help. Are you sure you want to make changes? 
-</p>
+                    <p>The changes to the proposal form might impact your premium and the policy issue date. An agent will also be assigned to you to provide assistance. Are you sure you want to make these changes?</p>
                     
                     <div className="buttonControlBlock btnRow">
                         <button onClick={handleModalProceed}  className="btnOutline">Confirm</button>

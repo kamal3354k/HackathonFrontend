@@ -15,6 +15,7 @@ const DetailContainer = ({ setshowSkeleton }) => {
   const [showCheckBox, setShowCheckbox] = useState(false)
   const [showEditPopUp, setShowEditPopUp] = useState(false);
   const [showSubmitPopUp, setShowSubmitPopUp] = useState(false);
+  const [formError,setFormError]=useState(false);
 
   // flowType=1 // All Details OK push to insurer
   // flowType=2 // Edit and redirect to CJ
@@ -38,6 +39,7 @@ const DetailContainer = ({ setshowSkeleton }) => {
 
   const handleCheckBoxFormState = ({ target: { value } }) => {
     let val = Number(value);
+    setFormError(false);
 
     // Use the updater function to update the state based on the previous state
     setState(prevState => {
@@ -81,23 +83,27 @@ const DetailContainer = ({ setshowSkeleton }) => {
     setSubmitForm(true);
     if (flowType == 2) {
 
-      // call Redirect to CJ Api here 
+      if (state.length > 0) {
+        // call Redirect to CJ Api here 
 
-      axios.post('https://hackathonbackend-psi.vercel.app/api/generateRedirectLink', {
-        "LeadID": 111,
-        "CustomerID": 12345,
-        "ProductID": 2,
-        "fieldList": state
-      })
-        .then((response) => {
-          if (response?.data.statusCode === 200) {
-            window.open(response?.data?.redirectUrl,"_blank","noopener")
-          }
+        axios.post('https://hackathonbackend-psi.vercel.app/api/generateRedirectLink', {
+          "LeadID": 111,
+          "CustomerID": 12345,
+          "ProductID": 2,
+          "fieldList": state
         })
-        .catch((err) => {
-          console.log(err)
-        });
-        
+          .then((response) => {
+            if (response?.data.statusCode === 200) {
+              window.open(response?.data?.redirectUrl, "_blank", "noopener")
+            }
+          })
+          .catch((err) => {
+            console.log(err)
+          });
+      } else {
+        setFormError(true);
+      }
+
     }
 
   }
@@ -115,8 +121,9 @@ const DetailContainer = ({ setshowSkeleton }) => {
     return (
       showSkeletonForm ? <SkeletonLoader width={630} count={30} /> :
         <div className='detail-main-container'>
-          <DetailComponent data={user?.data} onClick={handleCheckBoxFormState} state={state} isCheckBox={showCheckBox} />
-          <BottomButtons handleEdit={handleEdit} data={holdARR} handleDataSubmit={handleDataSubmit} />
+          <DetailComponent data={user?.data} onClick={handleCheckBoxFormState} state={state} isCheckBox={showCheckBox} formError={formError}/>
+          {/* {formError && <h3>error</h3>} */}
+          <BottomButtons handleEdit={handleEdit} data={holdARR} handleDataSubmit={handleDataSubmit} showCheckBox={showCheckBox} />
 
 
           {showEditPopUp ? <PopUpAfterEdit handleModalCancel={handleModalCancel} handleModalProceed={handleModalProceed} /> : ""}
@@ -130,9 +137,9 @@ const DetailContainer = ({ setshowSkeleton }) => {
 export default DetailContainer
 
 
-const BottomButtons = ({ data, handleEdit, handleSubmit, setSubmitForm, handleDataSubmit }) => {
+const BottomButtons = ({ data, handleEdit, handleSubmit, setSubmitForm, handleDataSubmit,showCheckBox }) => {
   return (<div className='detail-bottom-container'>
-    <button onClick={handleEdit} className='edit-btn btn'>Edit details</button>
+    {!showCheckBox && <button onClick={handleEdit} className='edit-btn btn'>Edit details</button>}
     <button className='submit-btn btn' onClick={() => handleDataSubmit()}>Submit</button>
   </div>)
 }

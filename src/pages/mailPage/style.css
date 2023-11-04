@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    background: #f2f7ff;
+    -webkit-text-size-adjust: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+  }
+
+  a {
+    color: #253858;
+    text-decoration: none
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  p {
+    padding: 0 !important;
+    margin: 0 !important
+  }
+
+  .footer-top-info {
+    font-weight: 700;
+    font-size: 20px;
+    color: #253858;
+    text-align: center;
+    line-height: 20px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    display: block;
+  }
+
+  h1 {
+    padding: 20px 51px;
+    font-size: 32px;
+    margin: 0;
+    line-height: 42px;
+    font-weight: 500;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+  }
+
+  .borderRadius {
+    border-radius: 32px 32px 32px 32px;
+    -webkit-border-radius: 32px;
+  }
+
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  .Upper {
+    font-family: "Merriweather";
+    font-weight: bold;
+  }
+
+  .F2 {
+    font-family: "Roboto",  !important;
+  }
+
+  .arialF {
+    font-family: "Helvetica,Arial";
+  }
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Merriweather');
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+  @media only screen and (max-device-width: 480px),
+  only screen and (max-width: 480px) {
+    .mobile-shell {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
+    .td {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
+    .p30-15 {
+      padding: 25px 15px !important;
+    }
+
+    .fluid-img img {
+      max-width: 100%;
+      height: auto
+    }
+
+    .p0-15-30 {
+      padding: 0px 10px 30px 10px !important;
+    }
+
+    .mob_1 {
+      font-size: 24px !important;
+    }
+
+    .mob_2 {
+      font-size: 17px !important;
+    }
+
+    .mob_3 {
+      font-size: 14px !important;
+    }
+  }

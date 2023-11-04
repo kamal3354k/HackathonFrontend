@@ -98,6 +98,7 @@
   display: flex;
   column-gap: 12px;
   margin-top: 16px;
+  align-items: start;
 }
 
 .customPopup .customPopupInner .customPopupBody .confirmationBlock label {
@@ -105,12 +106,17 @@
   line-height: 20px;
   color: #000;
   opacity: 0.8;
+  text-align: left;
 }
 
 .customPopup .customPopupInner .customPopupBody .buttonControlBlock {
   margin-top: 16px;
   display: flex;
   gap: 16px;
+}
+
+#confirm{
+  margin-top: 4px;
 }
 
 .customPopup .customPopupInner .customPopupBody .buttonControlBlock.btnRow {

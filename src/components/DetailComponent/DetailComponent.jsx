@@ -1,12 +1,12 @@
 import React from 'react'
 import "./style.css"
 import LeftIcon from "../../assets/icons/left-arrow.svg"
-import BlueRect from "../../assets/utils/Rectangle.svg"
+import BlueRect from "../../assets/utils/Rectangle.png"
 import BajajImage from "../../assets/utils/bajajImage.png"
 
 import { Link } from 'react-router-dom';
 
-const DetailComponent = ({ data, ...props }) => {
+const DetailComponent = ({ data, formError,...props }) => {
   const { PropserDetails, ContactDetails, InsuredDetails, NomineeDetails, ...rest } = data
 
   return (
@@ -77,7 +77,7 @@ const DetailComponent = ({ data, ...props }) => {
           </div>
         </div>}
 
-
+        {formError && <span  className="error-text">Please select atleast one field</span>}
 
       </div>
     </div>

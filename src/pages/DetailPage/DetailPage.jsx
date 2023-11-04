@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import DetailContainer from '../../container/detailContainer/DetailContainer'
-import { notifyIcon } from '../../constant'
+import  notifyIcon  from '../../assets/utils/notify.gif'
 import "./style.css"
 import { useUserContext } from '../../provider/userProvider'
-import Loader from '../../components/loader/Loader'
 import Header from '../../components/header/Header'
 import NeedHelpIcon from "../../assets/icons/Need_help_icon.svg"
 import SkeletonLoader from '../../components/skeletonLoader/SkeletonLoader'
