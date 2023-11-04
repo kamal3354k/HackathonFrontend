@@ -50,6 +50,7 @@ const UserProvider = ({ children }) => {
     };
   }, []);
 
+  console.log(state, "::state")
 
 
   return <UserContext.Provider value={{ user: { ...state,...state.extra },setStates }}>{children}</UserContext.Provider>;

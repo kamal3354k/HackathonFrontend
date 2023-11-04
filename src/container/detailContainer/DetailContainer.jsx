@@ -14,6 +14,7 @@ const DetailContainer = ({ setshowSkeleton }) => {
   const [submitForm, setSubmitForm] = useState(false);
   const [showCheckBox, setShowCheckbox] = useState(false)
   const [showEditPopUp, setShowEditPopUp] = useState(false);
+  const [showSubmitPopUp, setShowSubmitPopUp] = useState(false);
 
   // flowType=1 // All Details OK push to insurer
   // flowType=2 // Edit and redirect to CJ
@@ -36,19 +37,19 @@ const DetailContainer = ({ setshowSkeleton }) => {
   }, [user.edit])
 
   const handleCheckBoxFormState = ({ target: { value } }) => {
-  let val = Number(value);
+    let val = Number(value);
 
-  // Use the updater function to update the state based on the previous state
-  setState(prevState => {
-    if (!prevState.includes(val)) {
-      // If val is not in the array, add it
-      return [...prevState, val];
-    } else {
-      // If val is in the array, remove it
-      return prevState.filter(item => item !== val);
-    }
-  });
-};
+    // Use the updater function to update the state based on the previous state
+    setState(prevState => {
+      if (!prevState.includes(val)) {
+        // If val is not in the array, add it
+        return [...prevState, val];
+      } else {
+        // If val is in the array, remove it
+        return prevState.filter(item => item !== val);
+      }
+    });
+  };
 
 
   const handleEdit = () => {
@@ -91,32 +92,40 @@ const DetailContainer = ({ setshowSkeleton }) => {
         .then((response) => {
           console.log(response)
           if (response?.data.statusCode === 200) {
-              window.open(response?.data?.redirectUrl)
+            window.open(response?.data?.redirectUrl,"_blank","noopener")
           }
         })
         .catch((err) => {
           console.log(err)
         });
-
+        
       console.log('heree');
     }
 
   }
 
+  useEffect(() => {
+    if (!user?.edit) {
+      setSubmitForm(false);
+      setState([])
+      setFlowType(1)
+    }
+  }, [user?.edit])
 
+  console.log(state,"::state")
 
   if (user?.data) {
     return (
-      showSkeletonForm ? <SkeletonLoader width={630} count={30} /> : 
-      <div className='detail-main-container'>
-        <DetailComponent data={user?.data} onClick={handleCheckBoxFormState} state={state} isCheckBox={showCheckBox} />
-        <BottomButtons handleEdit={handleEdit} data={holdARR} handleDataSubmit={handleDataSubmit} />
+      showSkeletonForm ? <SkeletonLoader width={630} count={30} /> :
+        <div className='detail-main-container'>
+          <DetailComponent data={user?.data} onClick={handleCheckBoxFormState} state={state} isCheckBox={showCheckBox} />
+          <BottomButtons handleEdit={handleEdit} data={holdARR} handleDataSubmit={handleDataSubmit} />
 
 
-        {showEditPopUp ? <PopUpAfterEdit handleModalCancel={handleModalCancel} handleModalProceed={handleModalProceed} /> : ""}
+          {showEditPopUp ? <PopUpAfterEdit handleModalCancel={handleModalCancel} handleModalProceed={handleModalProceed} /> : ""}
 
-        {submitForm && flowType == 1 && <SubmitProposal setSubmitForm={setSubmitForm} submitForm={submitForm} />}
-      </div>
+          {submitForm && flowType == 1 && <SubmitProposal setSubmitForm={setSubmitForm} submitForm={submitForm} />}
+        </div>
     )
   }
 }
