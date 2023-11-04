@@ -85,7 +85,7 @@ export const SubmitProposal = ({ setSubmitForm, submitForm }) => {
                         <div>
                             <div className="customPopupHeader">
                         <h4>Submit proposal form</h4>
-                        <img src="https://static.pbcdn.in/myaccount-cdn/images/assets/login-close-icon.svg" alt="" onClick={handleClose} />
+                        <img src="https://static.pbcdn.in/myaccount-cdn/images/login-close-icon.svg" alt="" onClick={handleClose} />
                         <div className="customPopupBody">
                             <div className="successBlock">
                                 <img src="https://static.pbcdn.in/myaccount-cdn/images/assets/success-image.png" alt="" />
